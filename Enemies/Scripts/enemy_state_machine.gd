@@ -1,21 +1,29 @@
 class_name EnemyStateMachine extends Node
 
-var states: Array[ EnemyState ]
-var prev_state: EnemyState
-var current_state: EnemyState
+
+var states : Array[ EnemyState ]
+var prev_state : EnemyState
+var current_state : EnemyState
+
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
 	pass
-	
+
+
+
 func _process(delta):
-	change_state( current_state.process( delta ))
+	change_state( current_state.process( delta ) )
 	pass
-	
-func _physics_process(delta: float) -> void:
-	change_state( current_state.physics( delta ))
+
+
+
+func _physics_process(delta):
+	change_state( current_state.physics( delta ) )
 	pass
-	
+
+
+
 func initialize( _enemy : Enemy ) -> void:
 	states = []
 	
@@ -33,10 +41,12 @@ func initialize( _enemy : Enemy ) -> void:
 		process_mode = Node.PROCESS_MODE_INHERIT
 	pass
 
+
+
 func change_state( new_state : EnemyState ) -> void:
 	if new_state == null || new_state == current_state:
 		return
-		
+	
 	if current_state:
 		current_state.exit()
 	

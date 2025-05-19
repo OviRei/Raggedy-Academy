@@ -8,21 +8,21 @@
 "sound_moods": {},
 "style": ""
 },
-&"default_portrait": "Bush",
+&"default_portrait": "Default",
 &"description": "",
 &"display_name": "Bush",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
-"Bush": {
+"Default": {
 "export_overrides": {
-"image": "\"res://Dialogic/Portraits/bush.png\""
+"image": "\"res://Props/Sprites/Props.png\""
 },
 "mirror": false,
-"offset": Vector2(0, -100),
-"scale": 0.2,
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 &"scale": 1.0

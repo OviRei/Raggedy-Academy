@@ -1,2 +1,0 @@
-# Raggedy Academy
-

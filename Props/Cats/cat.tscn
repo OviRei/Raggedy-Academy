@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq6xsh2ercuei"]
+
+[ext_resource type="Script" uid="uid://cehq1ws0fkvks" path="res://Props/Cats/cat.gd" id="1_avlqy"]
+[ext_resource type="Texture2D" uid="uid://ca4fum2a8abw3" path="res://Props/Cats/cat.png" id="2_iwvis"]
+[ext_resource type="PackedScene" uid="uid://c4j64wkqmh1q1" path="res://GeneralNodes/Interaction/interaction_area/interaction_area.tscn" id="3_jft7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdniw"]
+radius = 80.0
+
+[node name="Cat" type="Node2D"]
+script = ExtResource("1_avlqy")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_jft7k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_fdniw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.2845, 0.269)
+texture = ExtResource("2_iwvis")

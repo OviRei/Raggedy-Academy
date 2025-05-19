@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=3 uid="uid://2s5kytam25dl"]
+
+[ext_resource type="Script" uid="uid://cnu1ggg4x12gw" path="res://GUI/title_screen/title_screen.gd" id="1_3db5w"]
+[ext_resource type="AudioStream" uid="uid://bc0t3gwg2tcd6" path="res://GUI/title_screen/C418_Haggstrom.mp3" id="2_d7oa4"]
+[ext_resource type="Texture2D" uid="uid://bv4t57ixv38rf" path="res://GUI/title_screen/background.jpg" id="2_w84gl"]
+[ext_resource type="AudioStream" uid="uid://dlu5xct5smtim" path="res://GUI/title_screen/menu_focus.wav" id="3_hwe3q"]
+[ext_resource type="AudioStream" uid="uid://136l4gc423cl" path="res://GUI/title_screen/menu_select.wav" id="4_moer0"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_3db5w")
+music = ExtResource("2_d7oa4")
+button_focus_audio = ExtResource("3_hwe3q")
+button_press_audio = ExtResource("4_moer0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w84gl")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -48.0
+offset_right = 100.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ButtonNew" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+
+[node name="ButtonContinue" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="ButtonSettings" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="ButtonExit" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -147.0
+offset_right = 247.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Raggedy Academy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
