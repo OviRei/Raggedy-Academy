@@ -72,7 +72,6 @@ func anim_direction() -> String:
 		return "side"
 
 
-
 func _take_damage( hurt_box : HurtBox ) -> void:
 	if invulnerable == true:
 		return

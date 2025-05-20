@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://7egb2012ff3b"]
+[gd_scene load_steps=10 format=3 uid="uid://7egb2012ff3b"]
 
 [ext_resource type="Script" uid="uid://dxktqcmr7gome" path="res://Levels/scripts/level.gd" id="1_t4c53"]
 [ext_resource type="PackedScene" uid="uid://dgdqc0v1oicd5" path="res://Tile Maps/grass-01.tscn" id="2_nsy0e"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dr4blo7ya448q" path="res://Levels/player_spawn.tscn" id="4_loexg"]
 [ext_resource type="PackedScene" uid="uid://d4igjv570x7c4" path="res://Props/Plants/plant.tscn" id="5_pwydo"]
 [ext_resource type="PackedScene" uid="uid://cq6xsh2ercuei" path="res://Props/Cats/cat.tscn" id="6_8itkk"]
+[ext_resource type="PackedScene" uid="uid://davnbekxeonfl" path="res://NPC/npc.tscn" id="7_xhij5"]
+[ext_resource type="Resource" uid="uid://detqk0mhbijys" path="res://NPC/00_npcs/npc_02.tres" id="8_b60gt"]
+[ext_resource type="PackedScene" uid="uid://db5ehliki5cdf" path="res://NPC/npc_behavior_wander.tscn" id="8_th3kk"]
 
 [node name="01" type="Node2D"]
 y_sort_enabled = true
@@ -53,3 +56,10 @@ position = Vector2(424, 272)
 [node name="Cat" parent="." instance=ExtResource("6_8itkk")]
 position = Vector2(272, 232)
 scale = Vector2(0.5, 0.5)
+
+[node name="NPC" parent="." instance=ExtResource("7_xhij5")]
+position = Vector2(485, 175)
+npc_resource = ExtResource("8_b60gt")
+
+[node name="NpcBehaviorWander" parent="NPC" instance=ExtResource("8_th3kk")]
+wander_range = 3

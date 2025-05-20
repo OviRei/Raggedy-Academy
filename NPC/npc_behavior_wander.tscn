@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5ehliki5cdf"]
+
+[ext_resource type="Script" uid="uid://b4ex0ffxti6vg" path="res://NPC/scripts/npc_behavior_wander.gd" id="1_1oxwq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1oxwq"]
+radius = 96.0
+
+[node name="NpcBehaviorWander" type="Node2D"]
+script = ExtResource("1_1oxwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1oxwq")
+debug_color = Color(0.780392, 0.435294, 0.027451, 0.12549)
